@@ -16,7 +16,7 @@ h1 {
   text-align: center; 
 }
 #main-container {
-  margin: 100px 0;
+  padding: 100px 0;
 }
 
 #ltemList-listwrap {

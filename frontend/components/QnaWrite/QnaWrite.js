@@ -21,10 +21,10 @@ export default class QnaWrite extends Component {
                     <label for="qnawrite-content">내용</label>
                     <textarea id="qnawrite-content"  rows="30"  name="content" ></textarea> 
                 </div>
-                 <button id="submit">작성</button>
+                 <button id="submit" class="qnawrite-btn">작성</button>
             </form> 
             <div class="qnawrite-control">
-                <a href="/qnaboard/list">< 목록</a>
+                <a href="/qnaboard/list" class="qnalist-btn">< 목록</a>
              </div>
             `
     }

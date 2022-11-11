@@ -28,10 +28,7 @@ export default class RankList extends Component {
                     </li>`
                 })
             }else{
-                qs('#rankItem').innerHTML += `
-                    <li>
-                        <h1>랜덤박스가 없습니다 !!</h1>
-                    </li>`
+                qs('#rankItem').innerHTML += `<h1>랜덤박스가 없습니다 !!</h1>`
             }
         });
     }

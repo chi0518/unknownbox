@@ -12,12 +12,12 @@ form.qnawrite-form {
 
 .qnawrite-form label {
   display: block;
-  width: 100%;
+  width: 20%;
   padding: 5px;
 }
 .qnawrite-form input {
   display: block;
-  width: 100%;
+  width: 100% !important;
   border: none;
   border-bottom: 1px solid #333333;
   padding: 5px;
@@ -37,7 +37,7 @@ form.qnawrite-form {
 
 .qnawrite-form .qnawrite-content-wrap textarea {
   width: 100%;
-  border: 1px solid #333333;
+  border: 1px solid rgb(231, 230, 239);
   height: 200px;
 }
 
@@ -50,4 +50,32 @@ form.qnawrite-form {
   width: 90%;
   display: block;
   margin: 0 auto;
+}
+
+.qnawrite-btn {
+  width:100px;
+  background-color: #f8585b;
+  border: none;
+  color:#fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.qnalist-btn{
+  width:100px;
+  background-color: #9096b2;
+  border: none;
+  color:#fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px;
+  cursor: pointer;
 }

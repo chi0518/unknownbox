@@ -1,5 +1,19 @@
 @charset "utf-8";
 
+.qna-btns{
+  width:100px;
+  background-color: #9096b2;
+  border: none;
+  color:#fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px;
+  cursor: pointer;
+}
+
 #qna-container table.qnaview-table {
   border-top: 2px solid #FCE374;
   border-bottom: 1px solid #333333;

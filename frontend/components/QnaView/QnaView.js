@@ -11,10 +11,12 @@ export default class QnaView extends Component {
             <div id="qnaView"></div>
            
             <div class="qnaview-control">
-                <a href="/qnaboard/list">글목록</a>
-                <button id="delete">글삭제</button>
-                <button  id="modify">글수정</button>
-                <button  id="update" style="display: none">수정하기</button>                
+                <a href="/qnaboard/list" class="qna-btns">글목록</a>
+                <span>
+                <button id="delete" class="qna-btns">글삭제</button>
+                <button  id="modify" class="qna-btns">글수정</button>
+                </span>
+                <button  id="update" style="display: none" class="qna-btns">수정하기</button>                
             </div>
             `
     }
@@ -70,6 +72,7 @@ export default class QnaView extends Component {
                                     </table>
                                 `
                                 qs("#modify").style.display = 'none';
+                                qs("#delete").style.display = 'none';
                                 qs("#update").style.display = 'block';
                             })
 
@@ -102,12 +105,14 @@ export default class QnaView extends Component {
                                 console.log(x.password);
                                 formData.append("password", password);
                                 deleteQna(formData,x.qnaboardId).then(x =>{
-                                    if (x.status === 200){
-                                        alert("삭제가 완료 되었습니다.");
-                                        window.location.href = "/qnaboard/list";
-                                    }else{
-                                        alert("삭제실패");
-                                        return false;
+                                    if (x.status === 200) {
+                                        if (confirm("글을 삭제 하시겠습니까?")) {
+                                            alert("삭제가 완료 되었습니다.");
+                                            window.location.href = "/qnaboard/list";
+                                        } else {
+                                            alert("삭제실패");
+                                            return false;
+                                        }
                                     }
                                 })
 

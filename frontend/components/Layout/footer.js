@@ -32,7 +32,7 @@ export class Footer extends Component {
                 <li><a href="">이메일 무단수집 거부</a></li>
               </ul>
               <div class="copy">
-                <p>(주)unkonw box 대표이사: 1등조</p>      
+                <p>(주)unkonwbox 대표이사: 1등조</p>      
                 <p>본사 : 서울 성동구 아차산로17길 48</p>
                 <p>사업자번호: 111-11-111111</p>
                 <p>통신판매업신고번호 : 제 1111-서울-1111호<a href="">사업자 정보 확인</a></p>

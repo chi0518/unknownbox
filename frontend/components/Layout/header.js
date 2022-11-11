@@ -12,7 +12,7 @@ export class Header extends Component {
     return `<section class="header">
             <div class="header-fix">
               <div class="header-top">
-                <a href="/" class="header-logo">Shop logo</a>
+                <a href="/" class="header-logo">unkonw box</a>
                 <div class="header-top-box">
                   <ul class="header-toplist">
                     <li>
@@ -52,11 +52,10 @@ export class Header extends Component {
                   <a href="javascript:void(0);" id="side-nav-close">메뉴닫기</a>
                 </div>
                 <ul class="">
-                  <li class="menu" id="side-menu">
-                     
-                  </li>
+                  <span class="main-navtitle">카테고리</span>
+                  <li class="menu" id="side-menu"></li>
                   <li class="menu">
-                    <a href="#">고객센터</a>
+                    <span class="main-navtitle">고객센터</span>
                     <div class="depth2">
                       <ul>
                          <li><a href="/qnaboard/list">Q&A 게시판</a></li>
