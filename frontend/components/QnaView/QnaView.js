@@ -1,5 +1,5 @@
 import Component from "../../core/Component.js";
-import {insertQna, updateQna} from "../../apis/qna.js";
+import {insertQna, updateQna, deleteQna} from "../../apis/qna.js";
 import { qs } from "../../utils/index.js";
 import {getQnaDetail} from "../../apis/qna.js";
 import style from "./QnaView.css" assert { type: "css" };
@@ -12,8 +12,9 @@ export default class QnaView extends Component {
            
             <div class="qnaview-control">
                 <a href="/qnaboard/list">글목록</a>
+                <button id="delete">글삭제</button>
                 <button  id="modify">글수정</button>
-                <button  id="update" style="display: none">수정하기</button>
+                <button  id="update" style="display: none">수정하기</button>                
             </div>
             `
     }
@@ -26,10 +27,10 @@ export default class QnaView extends Component {
             if(password){
                 getQnaDetail(qnaboardId,password).then(x =>
                     {
+                        console.log(x);
                         if(x.error){
                             alert(x.error);
                             location.href = "/qnaboard/list";
-
                         }else{
                             qs("#qnaView").innerHTML += `
                              <table class="qnaview-table">
@@ -49,7 +50,6 @@ export default class QnaView extends Component {
                             </table>
                             `
                             qs("#modify").addEventListener('click',()=>{
-                                if(confirm("글을 수정하시겠습니까?")){
                                 qs("#qnaView").innerHTML = `                                    
                                      <table class="qnaview-table">
                                         <thead>
@@ -70,7 +70,6 @@ export default class QnaView extends Component {
                                 `
                                     qs("#modify").style.display = 'none';
                                     qs("#update").style.display = 'block';
-                                }
                             })
 
                             qs("#update").addEventListener('click',()=>{
@@ -97,6 +96,21 @@ export default class QnaView extends Component {
                                         return false;
                                     }
                                 }
+                            })
+
+                            qs("#delete").addEventListener('click',()=>{
+                                    const formData = new FormData();
+                                    formData.append("password", x._doc.password);
+                                    deleteQna(formData,x.qnaboardId).then(x =>{
+                                        if (x.status === 200){
+                                            alert("수정이 완료 되었습니다.");
+                                            window.location.href = "/qnaboard/list";
+                                        }else{
+                                            alert("수정실패");
+                                            return false;
+                                        }
+                                    })
+
                             })
                         }
                     }

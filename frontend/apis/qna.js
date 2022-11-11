@@ -28,6 +28,21 @@ export async function updateQna(formData,id) {
   }
 }
 
+export async function deleteQna(formData,id) {
+    try {
+        const response = await fetch(`http://localhost:8080/api/qnaboard/${id}`, {
+            method: "DELETE",
+            body: formData,
+            headers: {
+                "X-Access-Token": localStorage.getItem("accessToken")
+            }
+        });
+        console.log(response);
+        return response;
+    } catch (err) {
+        console.dir(err);
+    }
+}
 
 export  async function getQnaList() {
   try {
@@ -46,6 +61,7 @@ export  async function getQnaList() {
 
 export  async function getQnaDetail(id,password) {
   try {
+      password = encodeURI(password);
       const response = await fetch(`http://localhost:8080/api/qnaboard/${id}?password=${password}`, {
           method: "GET",
           headers: {

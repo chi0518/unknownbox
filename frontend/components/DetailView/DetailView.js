@@ -38,23 +38,25 @@ export class DetailView extends Component {
     setEvent() {
         const item = this.props;
         let count = 1;
+        let max = 10;
         getItem(item).then(x => {
           qs("#product-name").innerHTML = x.name;
           qs("#price").innerHTML = x.price + "원";
           qs("#count").innerHTML = count + "개";
 
           qs("#plus").addEventListener('click',()=>{
+              if(count === max){alert("등록할수있는 최대 수량입니다."); return false;}
+              else {
               qs("#count").innerHTML = (count + 1 ) + "개";
               count++;
+              }
           })
           qs("#minus").addEventListener('click',()=>{
-            if(count > 0){
-                qs("#count").innerHTML = (count - 1 ) + "개";
+            if(count > 1) {
+                qs("#count").innerHTML = (count - 1) + "개";
                 count--;
             }
           })
-
-
 
           qs("#addCart").addEventListener("click",() => {
               if(confirm("장바구니에 추가하시겠습니까?")){
